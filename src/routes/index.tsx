@@ -12,7 +12,7 @@ const Navigation = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Config" component={ConfigScreen} />
+        <Stack.Screen name="Configuracao" component={ConfigScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
