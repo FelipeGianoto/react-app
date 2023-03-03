@@ -1,0 +1,1 @@
+Projeto em typescript para estudo
