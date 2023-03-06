@@ -28,6 +28,19 @@ const styles = StyleSheet.create({
         marginBottom: 20
        
       },
+      buttonDelete: {
+        marginTop: 2,
+        backgroundColor: '#D22B2B',
+        width: '90%',
+        borderStyle: 'solid',
+        borderWidth: 1,
+        borderColor: '#D22B2B',
+        padding: 10,
+        alignItems: 'center',
+        borderRadius: 10,
+        marginBottom: 20
+       
+      },
       buttonText: {
         color: '#ffffff',
         fontSize: 17,
@@ -59,12 +72,11 @@ const styles = StyleSheet.create({
         alignItems: 'flex-end',
         justifyContent: 'flex-end',
       },
-      icon: {
+      carrinhoIcon: {
         fontSize: 30,
         fontWeight: 'bold',
       },
-      quantidadeArea: {
-        marginBottom: 15,
+      carrinhoQuantidadeArea: {
         backgroundColor: 'red',
         borderRadius: 10,
         width: 20,
@@ -72,7 +84,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
       },
-      quantidade: {
+      carrinhoQuantidade: {
         fontSize: 12,
         fontWeight: 'bold',
         color: "#fff",
@@ -80,10 +92,13 @@ const styles = StyleSheet.create({
       iconArea: {
         marginLeft: 16,
       },
+      icon: {
+        fontSize: 30,
+      },
       input: {
         backgroundColor: 'white',
-        marginTop: 10,
-        height: 200,
+        marginTop: 30,
+        height: 290,
         width: '90%',
         borderWidth: 1,
         borderRadius: 5,
@@ -91,6 +106,7 @@ const styles = StyleSheet.create({
         marginBottom: 20,
       },
       inputTitulo: {
+        marginTop: 40,
         backgroundColor: 'white',
         width: '90%',
         borderWidth: 1,

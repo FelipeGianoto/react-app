@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const styles = StyleSheet.create({
     container: {
@@ -29,7 +30,6 @@ const styles = StyleSheet.create({
        
       },
       buttonText: {
-        color: '#ffffff',
         fontSize: 17,
         fontStyle: 'normal',
         
@@ -120,6 +120,29 @@ const styles = StyleSheet.create({
       },
       itemDescricao: {
         fontSize: 16,
+      },
+      buttonData: {
+          marginTop: 10,
+          width: '100%',
+          borderStyle: 'solid',
+          borderWidth: 1,
+          borderColor: '#1F1B24',
+          alignItems: 'center',
+          borderRadius: 10,
+          marginBottom: 10
+      },
+      succes:{
+        width: '90%',
+        backgroundColor: '#198754',
+        color: 'white',
+        textAlign: 'center',
+        padding: 10,
+        borderColor: "#198754",
+        borderStyle: 'solid',
+        borderWidth: 2,
+        borderRadius: 10,
+        fontSize: 15
+        
       },
 });
 

@@ -1,39 +1,38 @@
 {
-    "users": [
-      {
-        "login": "felipe",
-        "id": 1,
-        "avatar_url": "https://avatars.githubusercontent.com/u/54721131?v=4",
-        "name": "Felipe Gianoto de Oliveira",
-        "email": "felipe@email.com",
-        "followers": 43,
-        "following": 54
-      },
-      {
-        "login": "nataliakt",
-        "id": 2,
-        "avatar_url": "https://avatars.githubusercontent.com/u/9091491?v=4",
-        "name": "Natalia Kelim Thiel",
-        "email": "natalia@email.com",
-        "followers": 51,
-        "following": 7
-      }
-    ],
-    "tarefas": 
-    [
-        {
-            "id": 1,
-            "usersId": 1,
-            "titulo": "git",
-            "descricao": "assuntos git como inicilizar um projeto em git",
-            "data": "10/02/2002"
-        },
-        {
-          "id": 2,
-          "usersId": 1,
-          "titulo": "Java",
-          "descricao": "assuntos git como inicilizar um projeto em git",
-          "data": "10/02/2002"
-      }
-    ]
-  }
+  "users": [
+    {
+      "login": "felipe",
+      "id": 1,
+      "avatar_url": "https://avatars.githubusercontent.com/u/54721131?v=4",
+      "name": "Felipe Gianoto de Oliveira",
+      "email": "felipe@email.com",
+      "followers": 43,
+      "following": 54
+    },
+    {
+      "login": "nataliakt",
+      "id": 2,
+      "avatar_url": "https://avatars.githubusercontent.com/u/9091491?v=4",
+      "name": "Natalia Kelim Thiel",
+      "email": "natalia@email.com",
+      "followers": 51,
+      "following": 7
+    }
+  ],
+  "tarefas": [
+    {
+      "id": 1,
+      "usersId": 1,
+      "titulo": "git",
+      "descricao": "assuntos git como inicilizar um projeto em git",
+      "data": "10/02/2002"
+    },
+    {
+      "id": 2,
+      "usersId": 1,
+      "titulo": "Java",
+      "descricao": "assuntos git como inicilizar um projeto em git",
+      "data": "10/02/2002"
+    }
+  ]
+}

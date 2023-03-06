@@ -1,4 +1,5 @@
 import api from '../api'
+import { Tarefa } from '../../interfaces';
 
 export async function getTopicos() {
     try {
@@ -8,5 +9,15 @@ export async function getTopicos() {
 
       return []
     }
+}
+
+export async function postTopicos(tarefa: Tarefa): Promise<Tarefa> {
+  try {
+    await api.post('/tarefas', tarefa);
+    return tarefa;
+  } catch (error) {
+    console.error(error);
+    return [] as never;
+  }
 }
 

@@ -5,6 +5,7 @@ import { RootStackParamList } from '../../types/navigation';
 import styles from './estilo';
 import { Feather } from '@expo/vector-icons';
 import { getTopicos } from './../../services/requisicoes/topicos';
+import { Tarefa } from '../../interfaces';
 
 type HomeScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -13,15 +14,6 @@ type HomeScreenNavigationProp = StackNavigationProp<
 
 type Props = {
   navigation: HomeScreenNavigationProp;
-};
-
-interface Tarefa {
-  id: number;
-  titulo: string;
-  descricao: string;
-  data: string;
-  usersId: number;
-
 };
 
 const HomeScreen = ({ navigation }: Props) => {
@@ -43,7 +35,7 @@ const HomeScreen = ({ navigation }: Props) => {
   }, []);
 
   const renderItem = ({ item }: { item: Tarefa }) => (
-    <TouchableOpacity onPress={() => { }}>
+    <TouchableOpacity onPress={() => navigation.navigate('DetalheAnotacao', { item } as never)}>
       <View style={styles.itemContainer}>
         <Text style={styles.itemTitulo}>{item.titulo}</Text>
         <View style={{ borderBottomWidth: 1, borderBottomColor: 'grey' }} />
@@ -68,24 +60,25 @@ const HomeScreen = ({ navigation }: Props) => {
         <Text style={styles.titulo}>Olá, Felipe</Text>
         <View style={styles.carrinhoArea}>
           <TouchableOpacity onPress={() => navigation.navigate('Configuracao')}>
-            <Feather name="map" size={30} color="#fff" style={styles.carrinhoIcon} />
+            <Feather name="map" size={30} color="#fff" style={styles.icon} />
           </TouchableOpacity>
-          <View style={styles.carrinhoQuantidadeArea}>
-            <Text style={styles.carrinhoQuantidade}>3</Text>
+          <View style={styles.quantidadeArea}>
+            <Text style={styles.quantidade}>3</Text>
           </View>
           <TouchableOpacity onPress={() => navigation.navigate('Configuracao')} style={styles.iconArea} >
-            <Feather name="settings" size={30} color="#fff" style={styles.carrinhoIcon} />
+            <Feather name="settings" size={30} color="#fff" style={styles.icon} />
           </TouchableOpacity>
         </View>
       </View>
       <ScrollView contentContainerStyle={styles.container}>
-        <TouchableOpacity style={styles.button} onPress={() => { verificaInput() }}>
-          <Text style={styles.buttonText}>Criar Tarefa</Text>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CriarAnotacao')}>
+          <Text style={styles.buttonText}><Feather name="plus-circle" size={16}></Feather> Criar Tarefa</Text>
         </TouchableOpacity>
         {!hideInput &&
           <>
             <Text style={{
-              color: 'white', marginVertical: 15, fontSize: 16  }}>Titulo</Text>
+              color: 'white', marginVertical: 15, fontSize: 16, fontWeight: 'bold'
+            }}>Titulo</Text>
             <TextInput
               style={styles.inputTitulo}
               placeholder="Digite o titulo"
@@ -94,7 +87,8 @@ const HomeScreen = ({ navigation }: Props) => {
               onChangeText={setTextTitulo}
             />
             <Text style={{
-              color: 'white', marginVertical: 15, fontSize: 16 }}>Descrição</Text>
+              color: 'white', marginVertical: 15, fontSize: 16, fontWeight: 'bold'
+            }}>Descrição</Text>
 
             <TextInput
               placeholder="Digite sua anotação aqui"
@@ -104,8 +98,12 @@ const HomeScreen = ({ navigation }: Props) => {
               value={textDescricao}
               onChangeText={setTextDescricao}
             />
+            <TouchableOpacity style={styles.button} onPress={() => {}}>
+              <Text style={styles.buttonText}><Feather name="plus-circle" size={16}></Feather> Tarefa</Text>
+            </TouchableOpacity>
           </>
         }
+        <Text style={{ color: 'white', fontSize: 16, fontWeight: 'bold', marginVertical: 15 }}>Ultimas Tarefas</Text>
         <FlatList
           data={tarefas}
           renderItem={renderItem}
