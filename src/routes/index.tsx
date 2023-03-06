@@ -11,7 +11,7 @@ const Navigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Home" component={HomeScreen}  options={{ headerShown: false }} />
         <Stack.Screen name="Configuracao" component={ConfigScreen} />
       </Stack.Navigator>
     </NavigationContainer>
