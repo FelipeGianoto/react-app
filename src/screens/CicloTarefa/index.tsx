@@ -47,15 +47,9 @@ const CicloScreen = ({ navigation }: Props) => {
   return (
 
     <View style={styles.container}>
-      <View style={styles.tituloArea}>
+       <View style={styles.tituloArea}>
         <Text style={styles.titulo}>Olá, Felipe</Text>
         <View style={styles.carrinhoArea}>
-          <TouchableOpacity onPress={() => navigation.navigate('Configuracao')}>
-            <Feather name="map" size={30} color="#fff" style={styles.icon} />
-          </TouchableOpacity>
-          <View style={styles.quantidadeArea}>
-            <Text style={styles.quantidade}>3</Text>
-          </View>
           <TouchableOpacity onPress={() => navigation.navigate('Configuracao')} style={styles.iconArea} >
             <Feather name="settings" size={30} color="#fff" style={styles.icon} />
           </TouchableOpacity>

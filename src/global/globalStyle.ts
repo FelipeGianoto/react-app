@@ -1,13 +1,7 @@
 interface IColors {
-    primaryDark: string;
-    primaryLight: string;
-    secondaryLight: string;
-    titleDark: string;
-    iconsBackground: string;
-    titleLight: string;
-    textDark: string;
-    textLight: string;
     backgroundPageColor: string;
+    titleBackGround: string;
+    backgroundButton: string;
   }
   
   interface IFontFamily {
@@ -16,16 +10,10 @@ interface IColors {
     bold: string;
   }
   
-  export const COLORS: IColors = {
-    primaryDark: '#008c99',
-    primaryLight: '#00AEBF',
-    secondaryLight: '#17B0A2',
-    iconsBackground: '#EDF9F8',
-    titleDark: '#008c99',
-    titleLight: '#17B0A2',
-    textDark: '#8992A3',
-    textLight: '#8F9BB3',
-    backgroundPageColor: '#F7F9FC',
+  export const cores: IColors = {
+    backgroundPageColor: '#1D1E26',
+    titleBackGround: '#4382F0',
+    backgroundButton: '#4382F0'
   };
   
   export const FONT_FAMILY: IFontFamily = {

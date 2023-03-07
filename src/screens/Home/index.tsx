@@ -58,31 +58,46 @@ const HomeScreen = ({ navigation }: Props) => {
     <View style={styles.container}>
       <View style={styles.tituloArea}>
         <Text style={styles.titulo}>Olá, Felipe</Text>
-        <View style={styles.carrinhoArea}>
-          <TouchableOpacity onPress={() => navigation.navigate('Configuracao')}>
-            <Feather name="map" size={30} color="#fff" style={styles.icon} />
-          </TouchableOpacity>
-          <View style={styles.quantidadeArea}>
-            <Text style={styles.quantidade}>3</Text>
-          </View>
+        <View style={styles.configArea}>
           <TouchableOpacity onPress={() => navigation.navigate('Configuracao')} style={styles.iconArea} >
             <Feather name="settings" size={30} color="#fff" style={styles.icon} />
           </TouchableOpacity>
         </View>
       </View>
       <ScrollView contentContainerStyle={styles.container}>
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CriarAnotacao')}>
-          <Text style={styles.buttonText}><Feather name="plus-square" size={16}></Feather> Criar Anotação</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
-          <Text style={styles.buttonText}><Feather name="list" size={16}></Feather> Listar Anoações</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CriarTarefa')}>
-          <Text style={styles.buttonText}><Feather name="plus-square" size={16}></Feather> Criar Tarefa</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CicloTarefa')}>
-          <Text style={styles.buttonText}><Feather name="list" size={16}></Feather> Listar Tarefas</Text>
-        </TouchableOpacity>
+      <Text style={{ color: 'white', fontSize: 16, fontWeight: 'bold', marginVertical: 15 }}>Menu</Text>
+        <View style={styles.menuContainer}>
+          <View style={styles.column}>
+            <TouchableOpacity style={styles.menuHome} onPress={() => navigation.navigate('CriarAnotacao')}>
+              <Feather style={styles.menuHomeText} name="plus-square" size={25}></Feather>
+              <Text style={styles.menuHomeText}> Criar Anotação</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.menuHome} onPress={() => navigation.navigate('Home')}>
+              <Feather style={styles.menuHomeText} name="list" size={16}></Feather>
+              <Text style={styles.menuHomeText}> Listar Anotações</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.column}>
+            <TouchableOpacity style={styles.menuHome} onPress={() => navigation.navigate('CriarTarefa')}>
+              <Feather style={styles.menuHomeText} name="plus-square" size={16}></Feather>
+              <Text style={styles.menuHomeText}> Criar Tarefa</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.menuHome} onPress={() => navigation.navigate('CicloTarefa')}>
+              <Feather style={styles.menuHomeText} name="list" size={16}></Feather>
+              <Text style={styles.menuHomeText}> Listar Tarefas</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.column}>
+            <TouchableOpacity style={styles.menuHome} onPress={() => navigation.navigate('Home')}>
+              <Feather style={styles.menuHomeText} name="settings" size={16}></Feather>
+              <Text style={styles.menuHomeText}> Alguma Página</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.menuHome} onPress={() => navigation.navigate('Home')}>
+              <Feather style={styles.menuHomeText} name="menu" size={16}></Feather>
+              <Text style={styles.menuHomeText}> Outra Página</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
         {!hideInput &&
           <>
             <Text style={{
@@ -107,7 +122,7 @@ const HomeScreen = ({ navigation }: Props) => {
               value={textDescricao}
               onChangeText={setTextDescricao}
             />
-            <TouchableOpacity style={styles.button} onPress={() => {}}>
+            <TouchableOpacity style={styles.button} onPress={() => { }}>
               <Text style={styles.buttonText}><Feather name="plus-circle" size={16}></Feather> Tarefa</Text>
             </TouchableOpacity>
           </>

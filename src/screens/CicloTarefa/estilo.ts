@@ -1,22 +1,18 @@
 import { StyleSheet } from 'react-native';
+import { cores } from './../../global/globalStyle';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'stretch',
-    backgroundColor: '#121212'
-  },
-  containerScrollView: {
-    flex: 1,
-    alignItems: 'stretch',
-    backgroundColor: '#121212'
+    alignItems: 'center',
+    backgroundColor: cores.backgroundPageColor
   },
   tituloArea: {
     marginTop: 40,
-    backgroundColor: '#1F1B24',
+    backgroundColor: cores.titleBackGround,
     width: '100%',
     alignItems: 'center',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     flexDirection: 'row',
     marginBottom: 16,
   },
@@ -83,7 +79,7 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
   iconArea: {
-    marginLeft: 16,
+    marginRight: 20
   },
   input: {
     backgroundColor: 'white',
