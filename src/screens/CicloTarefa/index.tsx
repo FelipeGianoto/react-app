@@ -47,7 +47,7 @@ const CicloScreen = ({ navigation }: Props) => {
   return (
 
     <View style={styles.container}>
-       <View style={styles.tituloArea}>
+      <View style={styles.tituloArea}>
         <Text style={styles.titulo}>Olá, Felipe</Text>
         <View style={styles.carrinhoArea}>
           <TouchableOpacity onPress={() => navigation.navigate('Configuracao')} style={styles.iconArea} >
@@ -55,7 +55,7 @@ const CicloScreen = ({ navigation }: Props) => {
           </TouchableOpacity>
         </View>
       </View>
-      <ScrollView style={{ marginLeft: 20, marginRight: 20, width: '100%' }}>
+      <ScrollView style={{ marginLeft: 50, width: '100%' }}>
         {Object.keys(tarefas).map((status) => (
           <View key={status} >
             {status == "pendente" &&
@@ -76,13 +76,35 @@ const CicloScreen = ({ navigation }: Props) => {
             <ScrollView horizontal={true}>
               {tarefas[status].map((tarefa: Tarefa) => (
 
-                <View key={Math.random() * 1000000} style={{ marginLeft: 20}}>
+                <View key={Math.random() * 1000000} style={{ marginLeft: 20 }}>
                   <TouchableOpacity onPress={() => navigation.navigate('DetalheAnotacao', { tarefa } as never)}>
                     <View style={styles.itemContainer}>
                       <Text style={styles.itemTitulo}>{tarefa.titulo}</Text>
                       <View style={{ borderBottomWidth: 1, borderBottomColor: 'grey' }} />
                       <Text style={styles.itemData}>{tarefa.data}</Text>
                       <Text style={styles.itemDescricao} numberOfLines={3} ellipsizeMode='tail'>{tarefa.descricao}</Text>
+                      <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', marginTop: 15 }}>
+                        {status != "pendente" && status != 'concluido' &&
+                          <TouchableOpacity style={styles.buttonPendenteItem}>
+                            <Text style={styles.buttonPendenteTextItem}>Pendente</Text>
+                          </TouchableOpacity>
+                        }
+                        {status != "em andamento" &&
+                          <TouchableOpacity style={styles.buttonEmAndamentoItem}>
+                            <Text style={styles.buttonEmAndamentoTextItem}>Em andamento</Text>
+                          </TouchableOpacity>
+                        }
+                        {status != "concluido" && status != 'pendente' &&
+                          <TouchableOpacity style={styles.buttonConcluidoItem}>
+                            <Text style={styles.buttonConcluidoTextItem}>Concluido</Text>
+                          </TouchableOpacity>
+                        }
+                        {status == "concluido" &&
+                          <TouchableOpacity style={styles.buttonConcluidoItem}>
+                            <Text style={styles.buttonConcluidoTextItem}>Finalizar</Text>
+                          </TouchableOpacity>
+                        }
+                      </View>
                     </View>
                   </TouchableOpacity>
                 </View>

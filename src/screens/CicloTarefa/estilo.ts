@@ -99,12 +99,13 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   itemContainer: {
+    
     backgroundColor: '#ffffff',
     borderRadius: 8,
     padding: 16,
     marginBottom: 8,
     width: 300,
-    height: 165
+    height: 220
   },
   itemTitulo: {
     textAlign: 'center',
@@ -120,6 +121,7 @@ const styles = StyleSheet.create({
     marginTop: 10
   },
   itemDescricao: {
+    height: 40,
     fontSize: 16,
   },
   buttonPendente: {
@@ -172,6 +174,60 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     fontSize: 17,
     fontStyle: 'normal',
+  },
+  buttonEmAndamentoItem: {
+    marginTop: 10,
+    backgroundColor: '#ffc107',
+    width: '45%',
+    borderStyle: 'solid',
+    borderWidth: 1,
+    borderColor: '#ffc107',
+    padding: 10,
+    alignItems: 'center',
+    borderRadius: 10,
+    marginBottom: 20
+  },
+  buttonEmAndamentoTextItem: {
+    color: '#ffffff',
+    fontSize: 12,
+    fontStyle: 'normal',
+    textAlign: 'center'
+  },
+  buttonConcluidoItem: {
+    marginTop: 10,
+    backgroundColor: '#198754',
+    width: '45%',
+    borderStyle: 'solid',
+    borderWidth: 1,
+    borderColor: '#198754',
+    padding: 10,
+    alignItems: 'center',
+    borderRadius: 10,
+    marginBottom: 20
+  },
+  buttonConcluidoTextItem: {
+    color: '#ffffff',
+    fontSize: 10,
+    fontStyle: 'normal',
+    textAlign: 'center'
+  },
+  buttonPendenteItem: {
+    marginTop: 10,
+    backgroundColor: '#D22B2B',
+    width: '45%',
+    borderStyle: 'solid',
+    borderWidth: 1,
+    borderColor: '#D22B2B',
+    padding: 10,
+    alignItems: 'center',
+    borderRadius: 10,
+    marginBottom: 20
+  },
+  buttonPendenteTextItem: {
+    color: '#ffffff',
+    fontSize: 10,
+    fontStyle: 'normal',
+    textAlign: 'center'
   },
 });
 
