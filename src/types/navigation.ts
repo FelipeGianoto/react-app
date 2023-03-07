@@ -6,6 +6,11 @@ export type RootStackParamList = {
   Configuracao: undefined;
   DetalheAnotacao: undefined;
   CriarAnotacao: undefined;
+  CicloTarefa: undefined;
+  CriarTarefa: undefined;
+  Concluido: undefined;
+  EmAndamento: undefined;
+  Pendentes: undefined;
 };
 
 type HomeScreenRouteProp = RouteProp<RootStackParamList, 'Home'>;
@@ -15,6 +20,16 @@ type ConfigScreenRouteProp = RouteProp<RootStackParamList, 'Configuracao'>;
 type AnotacaoScreenRouteProp = RouteProp<RootStackParamList, 'DetalheAnotacao'>;
 
 type AnotacaoPostScreenProp = RouteProp<RootStackParamList, 'CriarAnotacao'>;
+
+type CicloScreenProp = RouteProp<RootStackParamList, 'CicloTarefa'>;
+
+type TarefaPostScreenProp = RouteProp<RootStackParamList, 'CriarTarefa'>;
+
+type ConcluidoScreenProp = RouteProp<RootStackParamList, 'Concluido'>;
+
+type EmAndamentoScreenProp = RouteProp<RootStackParamList, 'EmAndamento'>;
+
+type PendentesScreenProp = RouteProp<RootStackParamList, 'Pendentes'>;
 
 
 export type HomeScreenProps = {
@@ -35,5 +50,30 @@ export type AnotacaoScreenProps = {
 export type AnotacaoPostScreenProps = {
   navigation: StackNavigationProp<RootStackParamList, 'CriarAnotacao'>;
   route: AnotacaoPostScreenProp;
+};
+
+export type CicloScreenProps = {
+  navigation: StackNavigationProp<RootStackParamList, 'CicloTarefa'>;
+  route: CicloScreenProp;
+};
+
+export type TarefaPostScreenProps = {
+  navigation: StackNavigationProp<RootStackParamList, 'CriarTarefa'>;
+  route: TarefaPostScreenProp;
+};
+
+export type ConcluidoScreenProps = {
+  navigation: StackNavigationProp<RootStackParamList, 'Concluido'>;
+  route: ConcluidoScreenProp;
+};
+
+export type EmAndamentoScreenProps = {
+  navigation: StackNavigationProp<RootStackParamList, 'EmAndamento'>;
+  route: EmAndamentoScreenProp;
+};
+
+export type PendentesScreenProps = {
+  navigation: StackNavigationProp<RootStackParamList, 'Pendentes'>;
+  route: PendentesScreenProp;
 };
 

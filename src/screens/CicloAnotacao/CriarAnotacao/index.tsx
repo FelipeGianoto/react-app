@@ -2,11 +2,11 @@ import React, { useState, useEffect, } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Platform, TextInput, Alert } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../../types/navigation';
+import { RootStackParamList } from '../../../types/navigation';
 import { Feather } from '@expo/vector-icons';
 import styles from './estilo';
-import { Tarefa } from '../../interfaces';
-import { postTopicos } from '../../services/requisicoes/topicos';
+import { Anotacao } from '../../../interfaces';
+import { postTopicos } from '../../../services/requisicoes/anotacoes';
 
 type AnotacaoPostScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -18,7 +18,7 @@ type Props = {
 };
 
 interface RouteParams {
-  item: Tarefa;
+  item: Anotacao;
 }
 
 const AnotacaoPostScreen = ({ navigation }: Props) => {
@@ -48,7 +48,7 @@ const AnotacaoPostScreen = ({ navigation }: Props) => {
 
   function salvar() {
 
-    const tarefa: Tarefa = {
+    const tarefa: Anotacao = {
       titulo: textTitulo,
       descricao: textDescricao,
       data: data.toString(),

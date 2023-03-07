@@ -1,11 +1,11 @@
 import React, { useState, useEffect, } from 'react';
-import { View, Text, TouchableOpacity, TextInput, FlatList, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput} from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../../types/navigation';
+import { RootStackParamList } from '../../../types/navigation';
 import { Feather } from '@expo/vector-icons';
 import { useRoute } from '@react-navigation/native';
 import styles from './estilo';
-import { Tarefa } from '../../interfaces';
+import { Tarefa } from '../../../interfaces';
 
 type AnotacaoScreenNavigationProp = StackNavigationProp<
   RootStackParamList,

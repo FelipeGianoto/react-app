@@ -1,7 +1,7 @@
 import api from '../api'
 import { Tarefa } from '../../interfaces';
 
-export async function getTopicos() {
+export async function getTarefas() {
     try {
       const response = await api.get('/tarefas');
       return response.data
@@ -11,7 +11,7 @@ export async function getTopicos() {
     }
 }
 
-export async function postTopicos(tarefa: Tarefa): Promise<Tarefa> {
+export async function salvaTarefa(tarefa: Tarefa): Promise<Tarefa> {
   try {
     await api.post('/tarefas', tarefa);
     return tarefa;
