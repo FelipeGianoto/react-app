@@ -1,5 +1,5 @@
 import api from '../api'
-import { Tarefa } from '../../interfaces';
+import { Tarefa, StatusTarefa } from '../../interfaces';
 
 export async function getTarefas() {
     try {
@@ -9,6 +9,15 @@ export async function getTarefas() {
 
       return []
     }
+}
+export async function getTarefasByStaus(status : StatusTarefa) {
+  try {
+    const response = await api.get('/tarefas', { params: { status } });
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
 }
 
 export async function salvaTarefa(tarefa: Tarefa): Promise<Tarefa> {

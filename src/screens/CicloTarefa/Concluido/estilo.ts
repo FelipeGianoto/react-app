@@ -121,6 +121,30 @@ const styles = StyleSheet.create({
       itemDescricao: {
         fontSize: 16,
       },
+      buttonConcluido: {
+        marginTop: 10,
+        backgroundColor: '#198754',
+        width: '90%',
+        borderStyle: 'solid',
+        borderWidth: 1,
+        borderColor: '#198754',
+        padding: 10,
+        alignItems: 'center',
+        borderRadius: 10,
+        marginBottom: 20
+      },
+      buttonConcluidoText: {
+        color: '#ffffff',
+        fontSize: 17,
+        fontStyle: 'normal',
+      },
+      buttonData: {
+        textAlign: 'center',
+        color: '#ffffff',
+        fontSize: 17,
+        fontStyle: 'normal',
+        marginVertical: 20,
+      },
 });
 
 export default styles;

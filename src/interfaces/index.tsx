@@ -14,6 +14,7 @@ export interface Anotacao {
   };
   export enum StatusTarefa {
     PENDENTE = 'pendente',
+    EM_ANDAMENTO = 'em andamento',
     CONCLUIDO = 'concluido',
-    EM_ANDAMENTO = 'em andamento'
+   
   }

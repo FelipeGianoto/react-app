@@ -43,16 +43,6 @@ const CicloScreen = ({ navigation }: Props) => {
     listTarefas();
   }, []);
 
-  const renderItem = ({ item }: { item: Tarefa }) => (
-    <TouchableOpacity onPress={() => navigation.navigate('DetalheAnotacao', { item } as never)}>
-      <View style={styles.itemContainer}>
-        <Text style={styles.itemTitulo}>{item.titulo}</Text>
-        <View style={{ borderBottomWidth: 1, borderBottomColor: 'grey' }} />
-        <Text style={styles.itemData}>{item.data}</Text>
-        <Text style={styles.itemDescricao} numberOfLines={3} ellipsizeMode='tail'>{item.descricao}</Text>
-      </View>
-    </TouchableOpacity>
-  );
 
   return (
 
@@ -75,33 +65,36 @@ const CicloScreen = ({ navigation }: Props) => {
         {Object.keys(tarefas).map((status) => (
           <View key={status} >
             {status == "pendente" &&
-              <TouchableOpacity style={styles.buttonPendente} >
+              <TouchableOpacity style={styles.buttonPendente} onPress={() => navigation.navigate('Pendentes')}>
                 <Text style={styles.buttonPendenteText}>{status}</Text>
               </TouchableOpacity>
             }
             {status == "concluido" &&
-              <TouchableOpacity style={styles.buttonConcluido} >
+              <TouchableOpacity style={styles.buttonConcluido} onPress={() => navigation.navigate('Concluido')}>
                 <Text style={styles.buttonConcluidoText}>{status}</Text>
               </TouchableOpacity>
             }
-              {status == "em andamento" &&
-              <TouchableOpacity style={styles.buttonEmAndamento} >
+            {status == "em andamento" &&
+              <TouchableOpacity style={styles.buttonEmAndamento} onPress={() => navigation.navigate('EmAndamento')}>
                 <Text style={styles.buttonEmAndamentoText}>{status}</Text>
               </TouchableOpacity>
             }
+            <ScrollView horizontal={true}>
+              {tarefas[status].map((tarefa: Tarefa) => (
 
-            {tarefas[status].map((tarefa: Tarefa) => (
-              <View key={Math.random() * 1000000} style={{ marginLeft: 20, marginRight: 20, width: '100%' }}>
-                <TouchableOpacity onPress={() => navigation.navigate('DetalheAnotacao', { tarefa } as never)}>
-                  <View style={styles.itemContainer}>
-                    <Text style={styles.itemTitulo}>{tarefa.titulo}</Text>
-                    <View style={{ borderBottomWidth: 1, borderBottomColor: 'grey' }} />
-                    <Text style={styles.itemData}>{tarefa.data}</Text>
-                    <Text style={styles.itemDescricao} numberOfLines={3} ellipsizeMode='tail'>{tarefa.descricao}</Text>
-                  </View>
-                </TouchableOpacity>
-              </View>
-            ))}
+                <View key={Math.random() * 1000000} style={{ marginLeft: 20}}>
+                  <TouchableOpacity onPress={() => navigation.navigate('DetalheAnotacao', { tarefa } as never)}>
+                    <View style={styles.itemContainer}>
+                      <Text style={styles.itemTitulo}>{tarefa.titulo}</Text>
+                      <View style={{ borderBottomWidth: 1, borderBottomColor: 'grey' }} />
+                      <Text style={styles.itemData}>{tarefa.data}</Text>
+                      <Text style={styles.itemDescricao} numberOfLines={3} ellipsizeMode='tail'>{tarefa.descricao}</Text>
+                    </View>
+                  </TouchableOpacity>
+                </View>
+
+              ))}
+            </ScrollView>
           </View>
         ))}
       </ScrollView>
