@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, TouchableOpacity, FlatList } from 'react-native';
+import { Text, View, TouchableOpacity, Button, TextInput, Platform } from 'react-native';
 import styles from './estilo';
 import { Feather } from '@expo/vector-icons';
 import { StackNavigationProp } from '@react-navigation/stack';
@@ -7,6 +7,8 @@ import { RootStackParamList } from '../../../types/navigation';
 import { ScrollView } from 'react-native-gesture-handler';
 import { getTarefasByStaus } from '../../../services/requisicoes/tarefas';
 import { StatusTarefa, Tarefa } from '../../../interfaces'
+import { DatePicker, getData }  from '../../../components/DateTimePicker'
+
 
 type HomeScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -23,7 +25,7 @@ interface TarefasPorData {
 
 const ConcluidoScreen = ({ navigation }: Props) => {
 
-
+  
   const [tarefa, setTarefa] = useState<TarefasPorData>({});
 
   useEffect(() => {
@@ -74,9 +76,13 @@ const ConcluidoScreen = ({ navigation }: Props) => {
           </TouchableOpacity>
         </View>
       </View>
+
+      <DatePicker/>
+
       <View style={styles.buttonConcluido}>
         <Text style={styles.buttonConcluidoText}>Concluido</Text>
       </View>
+
       <ScrollView style={{ marginLeft: 20, marginRight: 20, width: '100%' }}>
         {Object.keys(tarefa).map((data) => (
           <View key={data} >
@@ -86,12 +92,12 @@ const ConcluidoScreen = ({ navigation }: Props) => {
 
             {tarefa[data].map((tarefa: Tarefa) => (
 
-              <View key={Math.random() * 1000000} style={{ marginLeft: 20 }}>
+              <View key={Math.random() * 1000000} style={{ marginLeft: 30 }}>
                 <TouchableOpacity onPress={() => navigation.navigate('DetalheAnotacao', { tarefa } as never)}>
                   <View style={styles.itemContainer}>
                     <Text style={styles.itemTitulo}>{tarefa.titulo}</Text>
                     <View style={{ borderBottomWidth: 1, borderBottomColor: 'grey' }} />
-                    <Text style={styles.itemData}>{tarefa.data}</Text>
+                    <Text style={styles.itemData}>{formatData(tarefa.data)}</Text>
                     <Text style={styles.itemDescricao} numberOfLines={3} ellipsizeMode='tail'>{tarefa.descricao}</Text>
                   </View>
                 </TouchableOpacity>

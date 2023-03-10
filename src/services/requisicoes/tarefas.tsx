@@ -30,3 +30,13 @@ export async function salvaTarefa(tarefa: Tarefa): Promise<Tarefa> {
   }
 }
 
+export async function atualizaTarefa(tarefa: Tarefa): Promise<Tarefa> {
+  try {
+    await api.put(`/tarefas/${tarefa.id}`, tarefa);
+    return tarefa;
+  } catch (error) {
+    console.error(error);
+    return [] as never;
+  }
+}
+

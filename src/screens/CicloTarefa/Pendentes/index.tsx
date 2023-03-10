@@ -86,12 +86,12 @@ const ConcluidoScreen = ({ navigation }: Props) => {
 
             {tarefa[data].map((tarefa: Tarefa) => (
 
-              <View key={Math.random() * 1000000} style={{ marginLeft: 20 }}>
+              <View key={Math.random() * 1000000} style={{ marginLeft: 30  }}>
                 <TouchableOpacity onPress={() => navigation.navigate('DetalheAnotacao', { tarefa } as never)}>
                   <View style={styles.itemContainer}>
                     <Text style={styles.itemTitulo}>{tarefa.titulo}</Text>
                     <View style={{ borderBottomWidth: 1, borderBottomColor: 'grey' }} />
-                    <Text style={styles.itemData}>{tarefa.data}</Text>
+                    <Text style={styles.itemData}>{formatData(tarefa.data)}</Text>
                     <Text style={styles.itemDescricao} numberOfLines={3} ellipsizeMode='tail'>{tarefa.descricao}</Text>
                   </View>
                 </TouchableOpacity>

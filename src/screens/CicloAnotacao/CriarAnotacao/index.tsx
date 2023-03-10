@@ -1,12 +1,12 @@
 import React, { useState, useEffect, } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Platform, TextInput, Alert } from 'react-native';
-import DateTimePicker from '@react-native-community/datetimepicker';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../types/navigation';
 import { Feather } from '@expo/vector-icons';
 import styles from './estilo';
 import { Anotacao } from '../../../interfaces';
 import { postTopicos } from '../../../services/requisicoes/anotacoes';
+import { DatePicker } from '../../../components/DateTimePicker';
 
 type AnotacaoPostScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -91,27 +91,7 @@ const AnotacaoPostScreen = ({ navigation }: Props) => {
       {anotacaoCriada && 
         <Text style={styles.succes}>Anotação Criada</Text>
       }
-      <TouchableOpacity style={styles.buttonData} onPress={exibirPicker}>
-        <TextInput
-          style={styles.inputTitulo}
-          placeholder="Digite o titulo"
-          numberOfLines={1}
-          value={data.toLocaleDateString()}
-          defaultValue={textTitulo}
-          onChangeText={setTextTitulo}
-          onPressIn={exibirPicker}
-        />
-      </TouchableOpacity>
-      {showPicker && (
-        <DateTimePicker
-          style={{ backgroundColor: "white", marginVertical: 10 }}
-          value={data}
-          mode="date"
-          display="calendar"
-          onChange={handleDataChange}
-
-        />
-      )}
+      <DatePicker/>
       <TextInput
         style={styles.inputTitulo}
         placeholder="Digite o titulo"

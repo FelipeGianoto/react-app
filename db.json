@@ -56,16 +56,16 @@
       "id": 1,
       "usersId": 1,
       "titulo": "gitaa",
-      "status": "pendente",
+      "status": "em andamento",
       "descricao": "assuntos git como inicilizar um projeto em git",
-      "data": "10/02/2002"
+      "data": "Tue Mar 07 2023 11:18:48 GMT-0300"
     },
     {
       "titulo": "Tegsbd",
       "descricao": "Bsbahshsus",
       "data": "Tue Mar 07 2023 11:18:48 GMT-0300",
       "usersId": 2,
-      "status": "pendente",
+      "status": "em andamento",
       "id": 2
     },
     {
@@ -73,7 +73,7 @@
       "descricao": "andamento",
       "data": "Tue Mar 07 2023 11:18:48 GMT-0300",
       "usersId": 2,
-      "status": "em andamento",
+      "status": "concluido",
       "id": 3
     },
     {
@@ -92,6 +92,5 @@
       "status": "concluido",
       "id": 5
     }
-   
   ]
 }

@@ -146,6 +146,19 @@ const styles = StyleSheet.create({
     fontStyle: 'normal',
     marginVertical: 20,
   },
+  buttonFiltrar: {
+    marginTop: 10,
+    backgroundColor:  cores.backgroundButton,
+    width: '40%',
+    borderStyle: 'solid',
+    borderWidth: 1,
+    borderColor:  cores.backgroundButton,
+    padding: 10,
+    alignItems: 'center',
+    borderRadius: 10,
+    marginBottom: 20,
+    marginRight: 55,
+  }
 });
 
 export default styles;
