@@ -5,7 +5,7 @@ import { Feather } from '@expo/vector-icons';
 
 
 
-export const DatePicker = (onDataChange: any) => {
+export const DatePicker = () => {
 
     const [data, setData] = useState(new Date());
     const [showPicker, setShowPicker] = useState(false);
@@ -16,7 +16,6 @@ export const DatePicker = (onDataChange: any) => {
         if (novaData) {
             setData(novaData);
             setShowPicker(false);
-            onDataChange(novaData);
             getData(data)
         }
     };
@@ -58,8 +57,9 @@ export const DatePicker = (onDataChange: any) => {
     )
 }
 
-export const getData = (data : Date) => {
-    return "data.toString()";
+export function getData(data : Date) {
+    console.log(data)
+    return data;
 }
 
 const styles = StyleSheet.create({

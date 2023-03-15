@@ -79,9 +79,9 @@ const ConcluidoScreen = ({ navigation }: Props) => {
 
       <DatePicker/>
 
-      <View style={styles.buttonConcluido}>
-        <Text style={styles.buttonConcluidoText}>Concluido</Text>
-      </View>
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonConcluidoText}>Filtrar</Text>
+      </TouchableOpacity>
 
       <ScrollView style={{ marginLeft: 20, marginRight: 20, width: '100%' }}>
         {Object.keys(tarefa).map((data) => (

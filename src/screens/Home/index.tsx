@@ -94,7 +94,7 @@ const HomeScreen = ({ navigation }: Props) => {
             </TouchableOpacity>
             <TouchableOpacity style={styles.menuHome} onPress={() => navigation.navigate('Home')}>
               <Feather style={styles.menuHomeText} name="menu" size={16}></Feather>
-              <Text style={styles.menuHomeText}> Outra Página</Text>
+              <Text style={styles.menuHomeText}> Criar lembrete</Text>
             </TouchableOpacity>
           </View>
         </View>

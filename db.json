@@ -56,7 +56,7 @@
       "id": 1,
       "usersId": 1,
       "titulo": "gitaa",
-      "status": "em andamento",
+      "status": "pendente",
       "descricao": "assuntos git como inicilizar um projeto em git",
       "data": "Tue Mar 07 2023 11:18:48 GMT-0300"
     },
@@ -73,7 +73,7 @@
       "descricao": "andamento",
       "data": "Tue Mar 07 2023 11:18:48 GMT-0300",
       "usersId": 2,
-      "status": "concluido",
+      "status": "em andamento",
       "id": 3
     },
     {
