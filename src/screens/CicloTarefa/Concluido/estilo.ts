@@ -148,17 +148,38 @@ const styles = StyleSheet.create({
   },
   buttonFiltrar: {
     marginTop: 10,
-    backgroundColor:  cores.backgroundButton,
+    backgroundColor: cores.backgroundButton,
     width: '40%',
     borderStyle: 'solid',
     borderWidth: 1,
-    borderColor:  cores.backgroundButton,
+    borderColor: cores.backgroundButton,
     padding: 10,
     alignItems: 'center',
     borderRadius: 10,
     marginBottom: 20,
     marginRight: 55,
-  }
+  },
+  datePicker: {
+    backgroundColor: "white",
+    marginVertical: 10,
+  },
+  inputData: {
+    backgroundColor: 'white',
+    width: '90%',
+    borderWidth: 1,
+    borderRadius: 5,
+    padding: 10,
+  },
+  containerData: {
+    marginTop: 10,
+    width: '100%',
+    borderStyle: 'solid',
+    borderWidth: 1,
+    borderColor: '#1F1B24',
+    alignItems: 'center',
+    borderRadius: 10,
+    marginBottom: 10
+  },
 });
 
 export default styles;

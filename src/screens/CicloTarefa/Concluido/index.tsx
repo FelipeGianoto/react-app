@@ -7,8 +7,7 @@ import { RootStackParamList } from '../../../types/navigation';
 import { ScrollView } from 'react-native-gesture-handler';
 import { getTarefasByStaus } from '../../../services/requisicoes/tarefas';
 import { StatusTarefa, Tarefa } from '../../../interfaces'
-import { DatePicker, getData }  from '../../../components/DateTimePicker'
-
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 type HomeScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -25,8 +24,11 @@ interface TarefasPorData {
 
 const ConcluidoScreen = ({ navigation }: Props) => {
 
-  
+
   const [tarefa, setTarefa] = useState<TarefasPorData>({});
+  const [data, setData] = useState(new Date());
+  const [showPicker, setShowPicker] = useState(false);
+  const [textTitulo, setTextTitulo] = useState('');
 
   useEffect(() => {
     async function listTarefas() {
@@ -52,13 +54,26 @@ const ConcluidoScreen = ({ navigation }: Props) => {
 
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     const diaSemana = dataAtual.toLocaleDateString('pt-BR', options as never);
-
     const dataFormatada = diaSemana;
-
-
-
     return dataFormatada
   }
+
+  const handleDataChange = (evento: any, novaData?: Date) => {
+    setShowPicker(Platform.OS === 'ios');
+    if (novaData) {
+      setData(novaData);
+      setShowPicker(false);
+    }
+  };
+
+  const exibirPicker = () => {
+    if (!showPicker) {
+      setShowPicker(true);
+    } else {
+      setShowPicker(false);
+    }
+
+  };
 
   return (
     <View style={styles.container}>
@@ -77,7 +92,29 @@ const ConcluidoScreen = ({ navigation }: Props) => {
         </View>
       </View>
 
-      <DatePicker/>
+      <TouchableOpacity style={styles.containerData} onPress={exibirPicker}>
+        <TextInput
+          style={styles.inputData}
+          placeholder="Digite o titulo"
+          numberOfLines={1}
+          value={data.toLocaleDateString()}
+          defaultValue={textTitulo}
+          onChangeText={setTextTitulo}
+          onPressIn={exibirPicker}
+        />
+      </TouchableOpacity>
+      {
+        showPicker && (
+          <DateTimePicker
+            style={styles.datePicker}
+            value={data}
+            mode="date"
+            display="calendar"
+            onChange={handleDataChange}
+
+          />
+        )
+      }
 
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonConcluidoText}>Filtrar</Text>

@@ -40,3 +40,13 @@ export async function atualizaTarefa(tarefa: Tarefa): Promise<Tarefa> {
   }
 }
 
+export async function findByDate(data: Date): Promise<Tarefa> {
+  try {
+    const response = await api.get(`/tarefas?data=${data}`);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    return [] as never;
+  }
+}
+
