@@ -23,7 +23,7 @@ export interface Anotacao {
     id?:string;
     titulo: string;
     descricao: string;
-    data: string;
+    data: Date;
     usersId: number;
     status: StatusTarefa;
   };

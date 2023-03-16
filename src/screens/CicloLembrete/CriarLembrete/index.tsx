@@ -18,33 +18,16 @@ type Props = {
   navigation: LembretePostScreenNavigationProp;
 };
 
-interface RouteParams {
-  item: Lembrete;
-}
-
 const LembretePostScreen = ({ navigation }: Props) => {
 
   const [textTitulo, setTextTitulo] = useState('');
   const [textDescricao, setTextDescricao] = useState('');
-  const [data, setData] = useState(new Date());
   const [lembreteCriado, setLembreteCriado] = useState(false);
-  const [showPicker, setShowPicker] = useState(false);
+  const [date, setDate] = useState(new Date());
 
-  const handleDataChange = (evento: any, novaData?: Date) => {
-    setShowPicker(Platform.OS === 'ios');
-    if (novaData) {
-      setData(novaData);
-      setShowPicker(false);
-    }
-  };
-
-  const exibirPicker = () => {
-    if (!showPicker) {
-      setShowPicker(true);
-    } else {
-      setShowPicker(false);
-    }
-
+ 
+  const handleDateChange = (event: any, selectedDate: any) => {
+    setDate(selectedDate || date);
   };
 
   function salvar() {
@@ -52,7 +35,7 @@ const LembretePostScreen = ({ navigation }: Props) => {
     const Lembrete: Lembrete = {
       titulo: textTitulo,
       descricao: textDescricao,
-      data: data.toString(),
+      data: date,
       usersId: 2,
       status: StatusTarefa.PENDENTE,
     };
@@ -66,33 +49,6 @@ const LembretePostScreen = ({ navigation }: Props) => {
     setTextTitulo('')
     setTextDescricao('')
   }
-
-  const [date, setDate] = useState(new Date());
-  const [time, setTime] = useState(new Date());
-  const [show, setShow] = useState(false);
-
-  const handleDateChange = (event: any, selectedDate: any) => {
-    setShow(Platform.OS === 'ios');
-    const dateString = selectedDate.toLocaleDateString('pt-BR', {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric'
-    });
-    
-    setDate(dateString || dateString);
-    console.log(date)
-  };
-
-  const handleTimeChange = (event: any, selectedTime: any) => {
-    setShow(Platform.OS === 'ios');
-    const dataFormated = moment(selectedTime).format('HH:mm');
-
-    setTime(selectedTime || time);
-  };
-
-  const handleButtonPress = () => {
-    setShow(true);
-  };
 
   return (
 
@@ -122,16 +78,9 @@ const LembretePostScreen = ({ navigation }: Props) => {
         <RNDateTimePicker
           style={{backgroundColor: '#fff'}}
           value={date}
-          mode="date"
+          mode="datetime"
           display="calendar"
           onChange={handleDateChange}
-        />
-        <RNDateTimePicker
-          style={{backgroundColor: '#fff'}}    
-          value={time}
-          mode="time"
-          display="calendar"
-          onChange={handleTimeChange}
         />
       </View>
       <TextInput
@@ -155,7 +104,6 @@ const LembretePostScreen = ({ navigation }: Props) => {
       <TouchableOpacity style={styles.button} onPress={() => salvar()}>
         <Text style={styles.buttonText}><Feather name="edit" size={16}></Feather> Salvar</Text>
       </TouchableOpacity>
-
     </View>
   );
 };

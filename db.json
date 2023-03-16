@@ -21,76 +21,30 @@
   ],
   "anotacoes": [
     {
-      "id": 1,
-      "usersId": 1,
-      "titulo": "git",
-      "descricao": "assuntos git como inicilizar um projeto em git",
-      "data": "10/02/2002"
-    },
-    {
-      "id": 2,
-      "usersId": 1,
-      "titulo": "Java",
-      "descricao": "assuntos git como inicilizar um projeto em git",
-      "data": "10/02/2002"
-    },
-    {
-      "titulo": "Teatee",
-      "descricao": "Ahahahays",
-      "data": "Tue Mar 07 2023 11:16:45 GMT-0300",
+      "titulo": "Jsjsjsjs",
+      "descricao": "Bsnsjsjsjdjdjdjdjd\n",
+      "data": "Thu Mar 16 2023 14:45:45 GMT-0300",
       "usersId": 2,
-      "status": "pendente",
-      "id": 3
-    },
-    {
-      "titulo": "",
-      "descricao": "",
-      "data": "Tue Mar 07 2023 11:17:13 GMT-0300",
-      "usersId": 2,
-      "status": "pendente",
-      "id": 4
+      "id": 1
     }
   ],
-  "tarefas": [
+  "tarefas": [],
+  "lembrete": [
     {
-      "id": 1,
-      "usersId": 1,
-      "titulo": "gitaa",
+      "titulo": "Tctvyvtv",
+      "descricao": "Crct tvtvtv\n",
+      "data": "2023-03-14T17:34:00.000Z",
+      "usersId": 2,
       "status": "pendente",
-      "descricao": "assuntos git como inicilizar um projeto em git",
-      "data": "Tue Mar 07 2023 11:18:48 GMT-0300"
+      "id": 1
     },
     {
-      "titulo": "Tegsbd",
-      "descricao": "Bsbahshsus",
-      "data": "Tue Mar 07 2023 11:18:48 GMT-0300",
+      "titulo": "Nsajsisj",
+      "descricao": "Snsjdidjdjdj",
+      "data": "2023-03-16T17:46:48.194Z",
       "usersId": 2,
-      "status": "em andamento",
+      "status": "pendente",
       "id": 2
-    },
-    {
-      "titulo": "Tegsbd",
-      "descricao": "andamento",
-      "data": "Tue Mar 07 2023 11:18:48 GMT-0300",
-      "usersId": 2,
-      "status": "em andamento",
-      "id": 3
-    },
-    {
-      "titulo": "Tegsbd",
-      "descricao": "Bsbahshsus",
-      "data": "Tue Mar 07 2023 11:18:48 GMT-0300",
-      "usersId": 2,
-      "status": "concluido",
-      "id": 4
-    },
-    {
-      "titulo": "Tegsbd",
-      "descricao": "Bsbahshsus",
-      "data": "Tue Mar 09 2023 11:18:48 GMT-0300",
-      "usersId": 2,
-      "status": "concluido",
-      "id": 5
     }
   ]
 }

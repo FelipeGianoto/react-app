@@ -14,6 +14,7 @@ import CicloScreen from '../screens/CicloTarefa/ListTarefa';
 import TarefaPostScreen from '../screens/CicloTarefa/CriaTarefa'
 
 import LembretePostScreen from '../screens/CicloLembrete/CriarLembrete'
+import ListLembreteScreen from '../screens/CicloLembrete/ListLembrete';
 
 const Stack = createStackNavigator();
 
@@ -34,6 +35,7 @@ const Navigation = () => {
         <Stack.Screen name="Pendentes" component={PendenteScreen} options={{ headerShown: false }} />
 
         <Stack.Screen name="CriarLembrete" component={LembretePostScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="ListLembrete" component={ListLembreteScreen} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
