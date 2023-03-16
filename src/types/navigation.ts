@@ -4,13 +4,19 @@ import { StackNavigationProp } from '@react-navigation/stack';
 export type RootStackParamList = {
   Home: undefined;
   Configuracao: undefined;
+
   DetalheAnotacao: undefined;
   CriarAnotacao: undefined;
+
   CicloTarefa: undefined;
   CriarTarefa: undefined;
   Concluido: undefined;
   EmAndamento: undefined;
   Pendentes: undefined;
+
+  CriarLembrete: undefined;
+  DetalheLembrete: undefined;
+  ListLembrete: undefined;
 };
 
 type HomeScreenRouteProp = RouteProp<RootStackParamList, 'Home'>;
@@ -30,6 +36,12 @@ type ConcluidoScreenProp = RouteProp<RootStackParamList, 'Concluido'>;
 type EmAndamentoScreenProp = RouteProp<RootStackParamList, 'EmAndamento'>;
 
 type PendentesScreenProp = RouteProp<RootStackParamList, 'Pendentes'>;
+
+type LembretePostScreenProp = RouteProp<RootStackParamList, 'CriarLembrete'>;
+
+type DetalheLembretescreenPop = RouteProp<RootStackParamList, 'DetalheLembrete'>;
+
+type ListLembretescreenProp = RouteProp<RootStackParamList, 'ListLembrete'>;
 
 
 export type HomeScreenProps = {
@@ -76,4 +88,19 @@ export type PendentesScreenProps = {
   navigation: StackNavigationProp<RootStackParamList, 'Pendentes'>;
   route: PendentesScreenProp;
 };
+
+export type LembretePostScreenProps = { 
+  navigation: StackNavigationProp<RootStackParamList, 'CriarLembrete'>;
+  route: LembretePostScreenProp
+}
+
+export type DetalheLembretescreenPops = {
+  navigation: StackNavigationProp<RootStackParamList, 'DetalheLembrete'>;
+  route: DetalheLembretescreenPop
+}
+
+export type ListLembretescreenProps = {
+  naigation: StackNavigationProp<RootStackParamList, 'ListLembrete'>;
+  route: ListLembretescreenProp
+} 
 

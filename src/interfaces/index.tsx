@@ -19,3 +19,11 @@ export interface Anotacao {
     CONCLUIDO = 'concluido',
    
   }
+  export interface Lembrete {
+    id?:string;
+    titulo: string;
+    descricao: string;
+    data: string;
+    usersId: number;
+    status: StatusTarefa;
+  };

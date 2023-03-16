@@ -65,7 +65,7 @@ const HomeScreen = ({ navigation }: Props) => {
         </View>
       </View>
       <ScrollView contentContainerStyle={styles.container}>
-      <Text style={{ color: 'white', fontSize: 16, fontWeight: 'bold', marginVertical: 15 }}>Menu</Text>
+        <Text style={{ color: 'white', fontSize: 16, fontWeight: 'bold', marginVertical: 15 }}>Menu</Text>
         <View style={styles.menuContainer}>
           <View style={styles.column}>
             <TouchableOpacity style={styles.menuHome} onPress={() => navigation.navigate('CriarAnotacao')}>
@@ -88,13 +88,13 @@ const HomeScreen = ({ navigation }: Props) => {
             </TouchableOpacity>
           </View>
           <View style={styles.column}>
+            <TouchableOpacity style={styles.menuHome} onPress={() => navigation.navigate('CriarLembrete')}>
+              <Feather style={styles.menuHomeText} name="plus-square" size={16}></Feather>
+              <Text style={styles.menuHomeText}> Criar lembrete</Text>
+            </TouchableOpacity>
             <TouchableOpacity style={styles.menuHome} onPress={() => navigation.navigate('Home')}>
               <Feather style={styles.menuHomeText} name="settings" size={16}></Feather>
               <Text style={styles.menuHomeText}> Alguma Página</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.menuHome} onPress={() => navigation.navigate('Home')}>
-              <Feather style={styles.menuHomeText} name="menu" size={16}></Feather>
-              <Text style={styles.menuHomeText}> Criar lembrete</Text>
             </TouchableOpacity>
           </View>
         </View>

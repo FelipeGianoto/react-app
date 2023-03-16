@@ -10,8 +10,10 @@ import AnotacaoPostScreen from '../screens/CicloAnotacao/CriarAnotacao';
 import ConcluidoScreen from './../screens/CicloTarefa/Concluido'
 import EmAndamentoScreen from '../screens/CicloTarefa/EmAndamento';
 import PendenteScreen from '../screens/CicloTarefa/Pendentes';
-import CicloScreen from '../screens/CicloTarefa';
+import CicloScreen from '../screens/CicloTarefa/ListTarefa';
 import TarefaPostScreen from '../screens/CicloTarefa/CriaTarefa'
+
+import LembretePostScreen from '../screens/CicloLembrete/CriarLembrete'
 
 const Stack = createStackNavigator();
 
@@ -30,6 +32,8 @@ const Navigation = () => {
         <Stack.Screen name="Concluido" component={ConcluidoScreen} options={{ headerShown: false }} />
         <Stack.Screen name="EmAndamento" component={EmAndamentoScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Pendentes" component={PendenteScreen} options={{ headerShown: false }} />
+
+        <Stack.Screen name="CriarLembrete" component={LembretePostScreen} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -3,10 +3,10 @@ import { Text, View, TouchableOpacity, ScrollView, FlatList } from 'react-native
 import styles from './estilo';
 import { Feather } from '@expo/vector-icons';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../../types/navigation';
-import { getTarefas } from '../../services/requisicoes/tarefas';
-import { StatusTarefa, Tarefa } from '../../interfaces';
-import { atualizaTarefa } from '../../services/requisicoes/tarefas';
+import { RootStackParamList } from '../../../types/navigation';
+import { getTarefas } from '../../../services/requisicoes/tarefas';
+import { StatusTarefa, Tarefa } from '../../../interfaces';
+import { atualizaTarefa } from '../../../services/requisicoes/tarefas';
 
 type HomeScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
