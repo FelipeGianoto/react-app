@@ -87,7 +87,7 @@ const LembretePostScreen = ({ navigation }: Props) => {
     setShow(Platform.OS === 'ios');
     const dataFormated = moment(selectedTime).format('HH:mm');
 
-    setTime(momento || time);
+    setTime(selectedTime || time);
   };
 
   const handleButtonPress = () => {
